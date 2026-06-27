@@ -1,0 +1,63 @@
+Here's the full master prompt, formatted for Replit AI:
+
+---
+
+**Project: lingadevaru-hp/brockennn — Wiki Site Update**
+
+Make the following changes to the existing site. Keep the current landing page design exactly as is — do not change its layout, animations, or structure. Build on top of it.
+
+**1. Search engine (landing page):**
+Add live autocomplete suggestions as the user types in the search bar. Show matching wiki articles with their thumbnails, using fuzzy/partial text matching.
+
+**2. Explore section / scroll behavior:**
+Keep the "Explore" button and scroll-to-expand behavior exactly as is. Build out good additional content in the revealed section below — themed around the wiki/team concept. Use the same fonts, spacing, card design, and color scheme as the rest of the site so it feels native. Whatever subtle animation/motion effects exist on the landing page (particle network, tilt effects, fades, etc.) should continue naturally into this section — same visual language, not abruptly different. Don't introduce new animation styles that clash with the existing ones; just extend the current feel downward.
+
+**3. Info card spacing (desktop only):**
+Several articles have sparse content next to the info card, leaving awkward empty space on desktop. Add more substantive content to fill that space properly. Leave the mobile layout untouched — it already looks fine.
+
+**4. About article — remove personal details:**
+Delete any mention of age, college name, and "MCA student" status from the About article.
+
+**5. About article — add public contact/social links:**
+Replace that removed content with clickable links (opening in a new tab) for:
+- GitHub → `lingadevaru-hp`
+- Hugging Face → `lingadevaruhp`
+- Kaggle → `lingadevaruhp`
+- Google Colab → `lingadevaruhp`
+- LinkedIn → `lingadevaruhp`
+- Public email: `contact@lingadevaru.in`
+
+**6. Image/GIF popup behavior (site-wide):**
+For every image and GIF across all articles and info cards — including the FOSS Coin article GIF (currently cropped; embed it fully uncropped) — clicking it should open a popup/modal with three actions: open in new tab (full screen), download, and dismiss/close. Apply this to all images consistently, not just the FOSS Coin one.
+
+**7. Article interlinking:**
+Properly interlink all articles with each other. The FOSS Coin article especially needs links to and from related articles. (Additional resource links may be supplied later — leave placeholders/structure ready for that.)
+
+**8. SEO — FOSS Coin article priority:**
+Optimize on-page SEO (meta title, meta description, headings, schema.org markup) so this article ranks prominently for searches like "FOSS coin." Open the article with a clear statement that I (Lingadevaru H P) created this coin and its purpose — funding Free & Open Source Software. Reference: https://github.com/lingadevaru-hp/Foss-Token — a live, tradeable Solana SPL token ($FOSS) listed on Orca DEX, usable for real transactions and to fund FOSS work.
+
+**9. SEO — Hugging Face project feature:**
+Add/optimize a section featuring https://huggingface.co/lingadevaruhp/thoshan_Flash so it surfaces when searching my name or username + "Thoshan Flash" / "Hugging Face." Mention 28+ downloads within its first month.
+
+**10. General SEO (site-wide):**
+Add proper meta tags, Open Graph tags, schema.org Person/CreativeWork structured data, sitemap.xml, and canonical URLs across all pages so my name and username (Lingadevaru H P / lingadevaru-hp) surface clearly in search results.
+
+**11. Microsoft Clarity analytics:**
+Embed Clarity tracking site-wide — every page and every article, not just the homepage — using project ID: `sqliaml0ju`.
+
+**12. Homepage "Featured" section:**
+Add a Featured section on the homepage showcasing both projects:
+- FOSS Coin (with the uncropped GIF)
+- Hugging Face Thoshan_Flash model (highlight 28+ downloads in month one)
+
+Link both back to https://lingadevaru.in as the canonical home for the work.
+
+**13. Mobile responsiveness:**
+Ensure all of the above — search suggestions, expanded explore section, fixed info cards, About links, image popups, featured section — work correctly on mobile.
+
+**14. Deployment:**
+Once everything is built and verified, force-push to `https://github.com/lingadevaru-hp/brockennn` (public repo), replacing existing repo contents with the new code. Use the GitHub PAT and email already configured in this Repl's environment/secrets for authentication — do not ask me to paste credentials in chat. Vercel's GitHub integration will auto-deploy after the push. If push fails, output the diff/changed files instead so I can push manually.
+
+---
+
+Drop your PAT into Replit's **Secrets** tab (not the prompt) before running this.

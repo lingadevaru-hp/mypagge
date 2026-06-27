@@ -11,6 +11,7 @@ export interface ArticleMetadata {
 export interface InfoboxField {
   label: string;
   value: string;
+  url?: string;
 }
 
 export interface Infobox {

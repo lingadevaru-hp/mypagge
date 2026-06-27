@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'wouter';
-import { X } from 'lucide-react';
 import type { ContentBlock as ContentBlockType } from '../types/article';
 
 function parseWikiLink(inner: string): { slug: string; text: string } {
@@ -89,19 +88,45 @@ interface LightboxProps {
 function Lightbox({ src, alt, caption, onClose }: LightboxProps) {
   return (
     <div
-      className="fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4"
+      className="fixed inset-0 bg-black/85 z-[200] flex items-center justify-center p-4"
       onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label={`Image: ${alt}`}
     >
-      <div className="relative max-w-4xl max-h-full" onClick={(e) => e.stopPropagation()}>
-        <button
-          className="absolute -top-8 right-0 text-white"
-          onClick={onClose}
-          data-testid="button-lightbox-close"
-        >
-          <X size={24} />
-        </button>
-        <img src={src} alt={alt} className="max-w-full max-h-[80vh] object-contain" />
-        {caption && <p className="text-white/80 text-sm mt-2 text-center">{caption}</p>}
+      <div className="relative max-w-5xl max-h-full flex flex-col items-center gap-3" onClick={(e) => e.stopPropagation()}>
+        <img
+          src={src}
+          alt={alt}
+          className="max-w-full max-h-[75vh] object-contain"
+          style={{ border: '1px solid rgba(255,255,255,0.1)' }}
+        />
+        {caption && <p className="text-white/70 text-sm italic text-center max-w-xl">{caption}</p>}
+        <div className="flex flex-wrap gap-2 justify-center">
+          <a
+            href={src}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-1.5 text-xs bg-white/10 hover:bg-white/20 text-white rounded border border-white/20 transition-colors"
+            onClick={(e) => e.stopPropagation()}
+          >
+            ↗ Open in new tab
+          </a>
+          <a
+            href={src}
+            download
+            className="px-4 py-1.5 text-xs bg-white/10 hover:bg-white/20 text-white rounded border border-white/20 transition-colors"
+            onClick={(e) => e.stopPropagation()}
+          >
+            ⬇ Download
+          </a>
+          <button
+            onClick={onClose}
+            className="px-4 py-1.5 text-xs bg-white/10 hover:bg-white/20 text-white rounded border border-white/20 transition-colors"
+          >
+            ✕ Close
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -116,19 +141,25 @@ export default function ContentBlock({ block }: { block: ContentBlockType }) {
 
     case 'banner':
       return (
-        <div className="mb-5 border border-border overflow-hidden" data-testid="banner-block">
+        <div
+          className="mb-5 border border-border overflow-hidden cursor-zoom-in"
+          data-testid="banner-block"
+          onClick={() => setLightbox({ src: block.src!, alt: block.alt || '', caption: block.caption })}
+          title="Click to expand"
+        >
           <img
             src={block.src}
             alt={block.alt || ''}
             className="w-full object-cover"
             loading="eager"
-            style={{ maxHeight: '340px' }}
+            style={{ maxHeight: '340px', display: 'block' }}
           />
           {block.caption && (
             <p className="text-xs text-muted-foreground p-2 italic text-center bg-card/50 border-t border-border">
               {block.caption}
             </p>
           )}
+          {lightbox && <Lightbox {...lightbox} onClose={() => setLightbox(null)} />}
         </div>
       );
 
@@ -142,6 +173,7 @@ export default function ContentBlock({ block }: { block: ContentBlockType }) {
             loading="lazy"
             onClick={() => setLightbox({ src: block.src!, alt: block.alt || '', caption: block.caption })}
             data-testid={`image-block-${block.src?.split('/').pop()}`}
+            title="Click to expand"
           />
           {block.caption && (
             <p className="text-xs text-muted-foreground p-1 italic">{block.caption}</p>
@@ -170,7 +202,7 @@ export default function ContentBlock({ block }: { block: ContentBlockType }) {
                 <tr key={ri} className={ri % 2 === 1 ? 'bg-card/40' : ''}>
                   {block.columns?.map((col, ci) => (
                     <td key={ci} className="border border-border px-3 py-1.5">
-                      {row[col]}
+                      {parseWikiText(row[col] || '')}
                     </td>
                   ))}
                 </tr>
@@ -203,7 +235,11 @@ export default function ContentBlock({ block }: { block: ContentBlockType }) {
         <div className="mb-4" data-testid="gallery-block">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
             {block.items?.map((item, i) => (
-              <div key={i} className="border border-border bg-card cursor-zoom-in" onClick={() => setLightbox(item)}>
+              <div
+                key={i}
+                className="border border-border bg-card cursor-zoom-in"
+                onClick={() => setLightbox(item)}
+              >
                 <img
                   src={item.src}
                   alt={item.alt}

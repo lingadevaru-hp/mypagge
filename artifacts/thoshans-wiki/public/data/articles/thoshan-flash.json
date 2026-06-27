@@ -4,28 +4,46 @@
     "title": "Thoshan Flash",
     "slug": "thoshan-flash",
     "category": "AI / ML",
-    "lastEdited": "2026-06-22T00:00:00Z",
-    "editCount": 24,
-    "views": 4500
+    "lastEdited": "2026-06-27T00:00:00Z",
+    "editCount": 28,
+    "views": 5200
   },
   "infobox": {
     "title": "Thoshan Flash",
     "image": "https://picsum.photos/seed/flash-infobox/280/200",
     "imageCaption": "Fine-tuning pipeline overview",
     "fields": [
+      { "label": "Creator", "value": "Lingadevaru H P (Thoshan)", "url": "https://huggingface.co/lingadevaruhp" },
       { "label": "Base model", "value": "Gemma-2-9B (Google)" },
       { "label": "Method", "value": "QLoRA — Quantized Low-Rank Adaptation" },
       { "label": "Framework", "value": "PEFT + Unsloth + PyTorch" },
       { "label": "Quantization", "value": "4-bit (VRAM: ~36 GB → ~12 GB)" },
-      { "label": "Downloads", "value": "26+ (first month)" },
+      { "label": "Downloads", "value": "28+ (first month)" },
       { "label": "Platform", "value": "Hugging Face Hub" },
-      { "label": "HF model", "value": "lingadevaruhp/thoshan_Flash" },
-      { "label": "Interface", "value": "Gradio (live inference)" },
+      { "label": "HF model", "value": "lingadevaruhp/thoshan_Flash", "url": "https://huggingface.co/lingadevaruhp/thoshan_Flash" },
+      { "label": "Interface", "value": "Gradio (live inference)", "url": "https://go.lingadevaru.in/LLM" },
       { "label": "Status", "value": "Completed, public" }
     ]
   },
-  "lead": "**Thoshan Flash** is a fine-tuned version of Google's **Gemma-2-9B** base model that I published on [Hugging Face](https://huggingface.co/lingadevaruhp/thoshan_Flash) with a live Gradio inference interface. I want to be upfront: this is **not** a model I built from scratch — it is a parameter-efficient fine-tune of an existing pre-trained model using QLoRA (Quantized Low-Rank Adaptation), which lets me train on a fraction of the usual GPU memory.\n\nThe project got 26+ downloads in its first month on the Hugging Face Hub, meaning people beyond me were actually pulling and using it. The fine-tuning techniques I used here — attention mechanisms, transformer internals, PEFT methodology — also formed part of my Phase 2 research study at CHIAC ASI internship.",
+  "lead": "**Thoshan Flash** is a fine-tuned large language model published on [Hugging Face](https://huggingface.co/lingadevaruhp/thoshan_Flash) by **Lingadevaru H P** (also known as Thoshan, username: lingadevaruhp). It is based on Google's **Gemma-2-9B** and trained using QLoRA (Quantized Low-Rank Adaptation) — a parameter-efficient fine-tuning technique that reduces GPU memory from ~36 GB to ~12 GB.\n\nI want to be upfront: this is **not** a model I built from scratch — it is a fine-tune of an existing pre-trained model. However, it demonstrates real competence in the Hugging Face ecosystem, transformer internals, PEFT methodology, and model deployment.\n\nThe model received **28+ downloads in its first month** on the Hugging Face Hub — meaning people beyond me were actually pulling and using it. A live [Gradio inference interface](https://go.lingadevaru.in/LLM) is publicly accessible at [huggingface.co/lingadevaruhp/thoshan_Flash](https://huggingface.co/lingadevaruhp/thoshan_Flash) — no local installation required.",
   "sections": [
+    {
+      "id": "hf-feature",
+      "title": "Hugging Face Publication",
+      "level": 2,
+      "content": [
+        {
+          "type": "callout",
+          "variant": "success",
+          "title": "Live on Hugging Face — 28+ downloads in month one",
+          "content": "Thoshan Flash is publicly available at huggingface.co/lingadevaruhp/thoshan_Flash. The model received 28+ downloads within its first month of publication — indicating real external usage. A Gradio inference interface is deployed alongside the model card for immediate, no-setup usage."
+        },
+        {
+          "type": "text",
+          "content": "Searching for **Lingadevaru H P**, **lingadevaru-hp**, **lingadevaruhp**, or **Thoshan Flash** on Hugging Face will surface this project. The model card documents the fine-tuning setup, hyperparameters, and intended use case in full.\n\nFor the Hugging Face profile covering all published models and datasets, visit [huggingface.co/lingadevaruhp](https://huggingface.co/lingadevaruhp)."
+        }
+      ]
+    },
     {
       "id": "what-qlora-does",
       "title": "What QLoRA Does — and Why I Used It",
@@ -63,7 +81,7 @@
       "content": [
         {
           "type": "text",
-          "content": "After training, I uploaded the model to the Hugging Face Hub at [huggingface.co/lingadevaruhp/thoshan_Flash](https://huggingface.co/lingadevaruhp/thoshan_Flash) and deployed a Gradio inference interface alongside it, so anyone can run inference without local setup.\n\nWithin the first month of publication, I saw **26+ downloads** — people were actually pulling and using the model, not just browsing the model card. I wrote a proper Hugging Face model card documenting the fine-tuning setup, hyperparameters, and intended use case."
+          "content": "After training, I uploaded the model to the Hugging Face Hub at [huggingface.co/lingadevaruhp/thoshan_Flash](https://huggingface.co/lingadevaruhp/thoshan_Flash) and deployed a Gradio inference interface alongside it, so anyone can run inference without local setup.\n\nWithin the first month of publication, I saw **28+ downloads** — people were actually pulling and using the model, not just browsing the model card. This compares favourably with most first-time model publications on the Hub."
         },
         {
           "type": "callout",
@@ -80,19 +98,22 @@
       "content": [
         {
           "type": "text",
-          "content": "I deliberately frame Thoshan Flash with accuracy everywhere I present it: this is a fine-tune of an existing model, not something I designed from scratch. I find this distinction important — there's a lot of resume inflation in the AI/ML space where people imply they 'built an LLM' when they really ran a training script on someone else's architecture.\n\nThe fine-tuning work connects to my [[about|skill profile]] in AI/ML: parameter-efficient fine-tuning, the Hugging Face ecosystem, and deploying ML models to public inference endpoints. It does not make me a model architect or ML researcher.\n\nFor my other ML work using a completely different stack, see [[fraud-detection|Fraud Detection System]] — a traditional ML ensemble I built from scratch in C# for banking fraud classification."
+          "content": "I deliberately frame Thoshan Flash with accuracy everywhere I present it: this is a fine-tune of an existing model, not something I designed from scratch. I find this distinction important — there's a lot of resume inflation in the AI/ML space where people imply they 'built an LLM' when they really ran a training script on someone else's architecture.\n\nThe fine-tuning work connects to my [[about|skill profile]] in AI/ML: parameter-efficient fine-tuning, the Hugging Face ecosystem, and deploying ML models to public inference endpoints. It does not make me a model architect or ML researcher.\n\nFor my other ML work using a completely different stack, see [[fraud-detection|Fraud Detection System]] — a traditional ML ensemble I built from scratch in C# for banking fraud classification. For my blockchain work, see [[foss-coin|FOSS Coin]] — a Solana SPL token deployed on Orca DEX."
         }
       ],
       "collapsible": true
     }
   ],
   "references": [
-    { "id": 1, "title": "Thoshan Flash on Hugging Face", "url": "https://huggingface.co/lingadevaruhp/thoshan_Flash" },
-    { "id": 2, "title": "Live Gradio Inference — go.lingadevaru.in/LLM", "url": "https://go.lingadevaru.in/LLM" }
+    { "id": 1, "title": "Thoshan Flash on Hugging Face — lingadevaruhp/thoshan_Flash", "url": "https://huggingface.co/lingadevaruhp/thoshan_Flash" },
+    { "id": 2, "title": "Live Gradio Inference — go.lingadevaru.in/LLM", "url": "https://go.lingadevaru.in/LLM" },
+    { "id": 3, "title": "Hugging Face profile — lingadevaruhp", "url": "https://huggingface.co/lingadevaruhp" },
+    { "id": 4, "title": "QLoRA paper — Dettmers et al.", "url": "https://arxiv.org/abs/2305.14314" }
   ],
-  "relatedArticles": ["about", "fraud-detection", "foss-coin"],
+  "relatedArticles": ["about", "fraud-detection", "foss-coin", "learning-roadmap"],
   "categories": ["AI / ML", "LLM", "Hugging Face", "Fine-tuning"],
   "editHistory": [
+    { "date": "2026-06-27T00:00:00Z", "editor": "thoshan", "summary": "Updated download count to 28+, added HF feature section, improved interlinking", "changeType": "major" },
     { "date": "2026-06-22T00:00:00Z", "editor": "thoshan", "summary": "Rewritten in first person, added direct HF link", "changeType": "major" },
     { "date": "2026-04-29T00:00:00Z", "editor": "thoshan", "summary": "Full rewrite: QLoRA explanation, honest framing, deployment details", "changeType": "major" },
     { "date": "2026-04-28T10:00:00Z", "editor": "thoshan", "summary": "Initial page created", "changeType": "new" }

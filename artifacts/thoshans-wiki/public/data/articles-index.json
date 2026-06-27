@@ -5,7 +5,7 @@
       "title": "About — Lingadevaru H P",
       "slug": "about",
       "category": "Profile",
-      "excerpt": "MCA student at SIT Tumakuru graduating 2026. Builder of deployed blockchain, AI, and web projects. Career focus: networking, cloud, and cybersecurity.",
+      "excerpt": "Lingadevaru H P (Thoshan) — builder of deployed blockchain, AI/ML, web, and self-hosted infrastructure projects. Creator of FOSS Coin on Solana, Thoshan Flash LLM, and Libre Cloud homelab.",
       "thumbnail": "https://picsum.photos/seed/about-thumb/160/100"
     },
     {
@@ -13,7 +13,7 @@
       "title": "FOSS Coin ($FOSS)",
       "slug": "foss-coin",
       "category": "Blockchain",
-      "excerpt": "An SPL token on Solana Mainnet built to symbolise support for Free and Open Source Software. Live on Orca Whirlpool DEX with a fixed 1B supply.",
+      "excerpt": "An SPL token on Solana Mainnet built to symbolise support for Free and Open Source Software. Created by Lingadevaru H P. Live on Orca Whirlpool DEX with a fixed 1B supply.",
       "thumbnail": "https://raw.githubusercontent.com/lingadevaru-hp/Foss-Token/refs/heads/main/foss-logo.png"
     },
     {
@@ -21,7 +21,7 @@
       "title": "Thoshan Flash",
       "slug": "thoshan-flash",
       "category": "AI / ML",
-      "excerpt": "A QLoRA fine-tune of Google's Gemma-2-9B large language model (LLM), published on Hugging Face with 26+ downloads and a live Gradio inference interface.",
+      "excerpt": "A QLoRA fine-tune of Google's Gemma-2-9B large language model (LLM) by Lingadevaru H P, published on Hugging Face with 28+ downloads and a live Gradio inference interface.",
       "thumbnail": "https://picsum.photos/seed/flash-thumb/160/100"
     },
     {
@@ -61,7 +61,7 @@
       "title": "Fraud Detection System",
       "slug": "fraud-detection",
       "category": "AI / ML",
-      "excerpt": "MCA Final Year Project: online banking fraud detection using ASP.NET and a 4-algorithm ML ensemble (Logistic Regression, KNN, SVM, CNN) with auto-blocking.",
+      "excerpt": "Final Year Project: online banking fraud detection using ASP.NET and a 4-algorithm ML ensemble (Logistic Regression, KNN, SVM, CNN) with auto-blocking.",
       "thumbnail": "https://picsum.photos/seed/fraud-thumb/160/100"
     },
     {

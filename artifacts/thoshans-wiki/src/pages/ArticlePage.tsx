@@ -4,8 +4,34 @@ import WikiHeader from '../components/WikiHeader';
 import WikiSidebar from '../components/WikiSidebar';
 import WikiFooter from '../components/WikiFooter';
 import ArticleView from '../components/ArticleView';
+import SeoHead from '../components/SeoHead';
 import { loadArticle } from '../lib/articleLoader';
 import type { Article } from '../types/article';
+
+function buildArticleSchema(article: Article) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": article.metadata.title,
+    "description": article.lead.slice(0, 200).replace(/\*\*/g, '').replace(/\[\[.*?\|?(.*?)\]\]/g, '$1'),
+    "author": {
+      "@type": "Person",
+      "name": "Lingadevaru H P",
+      "alternateName": "Thoshan",
+      "url": "https://brockennn.vercel.app/wiki/about"
+    },
+    "url": `https://brockennn.vercel.app/wiki/${article.metadata.slug}`,
+    "dateModified": article.metadata.lastEdited,
+    "publisher": {
+      "@type": "Person",
+      "name": "Lingadevaru H P"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://brockennn.vercel.app/wiki/${article.metadata.slug}`
+    }
+  };
+}
 
 export default function ArticlePage() {
   const params = useParams<{ slug: string }>();
@@ -28,7 +54,6 @@ export default function ArticlePage() {
       .then((a) => {
         setArticle(a);
         setLoading(false);
-        document.title = `${a.metadata.title} — Thoshan's Wiki`;
         requestAnimationFrame(() => {
           requestAnimationFrame(() => setVisible(true));
         });
@@ -40,8 +65,23 @@ export default function ArticlePage() {
       });
   }, [slug]);
 
+  const seoTitle = article
+    ? `${article.metadata.title} — Thoshan's Wiki`
+    : `${slug} — Thoshan's Wiki`;
+
+  const seoDescription = article
+    ? article.lead.slice(0, 200).replace(/\*\*/g, '').replace(/\[\[.*?\|?(.*?)\]\]/g, '$1').replace(/\n/g, ' ')
+    : undefined;
+
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
+      <SeoHead
+        title={seoTitle}
+        description={seoDescription}
+        canonicalPath={`/wiki/${slug}`}
+        type="article"
+        schemaJson={article ? buildArticleSchema(article) : undefined}
+      />
       <WikiHeader onMenuClick={() => setSidebarOpen((o) => !o)} />
       <div className="flex flex-1 max-w-[1400px] mx-auto w-full">
         <WikiSidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
@@ -81,7 +121,7 @@ export default function ArticlePage() {
               className="transition-opacity duration-300 ease-in"
               style={{ opacity: visible ? 1 : 0 }}
             >
-              <div className="mb-2 text-xs text-muted-foreground flex items-center gap-2 border-b border-border pb-2">
+              <div className="mb-2 text-xs text-muted-foreground flex items-center gap-2 border-b border-border pb-2 flex-wrap">
                 <button onClick={() => setLocation('/')} className="text-accent hover:underline">Home</button>
                 <span>·</span>
                 <button onClick={() => setLocation('/wiki/main-page')} className="text-accent hover:underline">Main Page</button>
