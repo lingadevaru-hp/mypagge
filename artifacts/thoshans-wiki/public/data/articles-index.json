@@ -5,23 +5,23 @@
       "title": "About — Lingadevaru H P",
       "slug": "about",
       "category": "Profile",
-      "excerpt": "Lingadevaru H P (Thoshan) — builder of deployed blockchain, AI/ML, web, and self-hosted infrastructure projects. Creator of FOSS Coin on Solana, Thoshan Flash LLM, and Libre Cloud homelab.",
-      "thumbnail": "https://picsum.photos/seed/about-thumb/160/100"
+      "excerpt": "Lingadevaru H P (Thoshan, GitHub: lingadevaru-hp) — builder of deployed blockchain, AI/ML, web, and self-hosted infrastructure projects. Creator of FOSS Coin on Solana, Thoshan Flash LLM, and Libre Cloud homelab.",
+      "thumbnail": "/foss-logo.png"
     },
     {
       "id": "foss-coin",
       "title": "FOSS Coin ($FOSS)",
       "slug": "foss-coin",
       "category": "Blockchain",
-      "excerpt": "An SPL token on Solana Mainnet built to symbolise support for Free and Open Source Software. Created by Lingadevaru H P. Live on Orca Whirlpool DEX with a fixed 1B supply.",
-      "thumbnail": "https://raw.githubusercontent.com/lingadevaru-hp/Foss-Token/refs/heads/main/foss-logo.png"
+      "excerpt": "An SPL token on Solana Mainnet built to fund Free and Open Source Software. Created by Lingadevaru H P (lingadevaru-hp). Live on Orca Whirlpool DEX (FOSS/SOL) with fixed 1B supply and permanently revoked mint authority.",
+      "thumbnail": "/foss-logo.png"
     },
     {
       "id": "thoshan-flash",
       "title": "Thoshan Flash",
       "slug": "thoshan-flash",
       "category": "AI / ML",
-      "excerpt": "A QLoRA fine-tune of Google's Gemma-2-9B large language model (LLM) by Lingadevaru H P, published on Hugging Face with 28+ downloads and a live Gradio inference interface.",
+      "excerpt": "A QLoRA fine-tune of Google's Gemma-2-9B large language model (LLM) by Lingadevaru H P (lingadevaruhp on Hugging Face), published with 28+ downloads and a live Gradio inference interface.",
       "thumbnail": "https://picsum.photos/seed/flash-thumb/160/100"
     },
     {

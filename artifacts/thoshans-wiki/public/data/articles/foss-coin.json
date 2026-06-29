@@ -10,8 +10,8 @@
   },
   "infobox": {
     "title": "FOSS Coin ($FOSS)",
-    "image": "https://raw.githubusercontent.com/lingadevaru-hp/Foss-Token/refs/heads/main/foss-logo.png",
-    "imageCaption": "FOSS Coin official logo",
+    "image": "/foss-logo.png",
+    "imageCaption": "FOSS Coin ($FOSS) official logo — created by Lingadevaru H P (lingadevaru-hp)",
     "fields": [
       { "label": "Creator", "value": "Lingadevaru H P (Thoshan)", "url": "https://github.com/lingadevaru-hp" },
       { "label": "Full name", "value": "Free Open Source Soft" },
@@ -36,9 +36,9 @@
       "content": [
         {
           "type": "banner",
-          "src": "https://media.giphy.com/media/bQL3YuiKKAXBwewvZ1/giphy.gif",
-          "alt": "FOSS Coin ($FOSS) live trading session on the Orca Whirlpool DEX — FOSS/SOL pair",
-          "caption": "FOSS Coin ($FOSS) live on the Orca Whirlpool DEX — FOSS/SOL trading pair. Click to expand."
+          "src": "/foss-trading.gif",
+          "alt": "FOSS Coin ($FOSS) live trading session on the Orca Whirlpool DEX — FOSS/SOL pair, created by Lingadevaru H P (lingadevaru-hp)",
+          "caption": "FOSS Coin ($FOSS) live on the Orca Whirlpool DEX — FOSS/SOL trading pair. Created by Lingadevaru H P (lingadevaru-hp). Click to expand."
         }
       ]
     },

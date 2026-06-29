@@ -59,8 +59,8 @@ export default function MainPage() {
               <div className="border border-border/60 bg-black/20 overflow-hidden hover:border-accent/50 transition-colors">
                 <div className="relative">
                   <img
-                    src="https://media.giphy.com/media/bQL3YuiKKAXBwewvZ1/giphy.gif"
-                    alt="FOSS Coin live trading on Orca DEX"
+                    src="/foss-trading.gif"
+                    alt="FOSS Coin ($FOSS) live trading on Orca Whirlpool DEX — created by Lingadevaru H P (lingadevaru-hp)"
                     className="w-full h-32 object-cover"
                     loading="eager"
                   />
